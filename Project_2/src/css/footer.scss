@@ -1,0 +1,46 @@
+.footer {
+  background-color: $bcgFooter;
+}
+
+.footer-wrap {
+  text-align: center;
+  min-width: px-to-rem(280px);
+  color: $colorSubtitle;
+  padding: px-to-rem(20px) 0 px-to-rem(50px);
+}
+
+.footer_logo {
+  display: flex;
+  justify-content: center;
+  font-weight: map-get($font-weight, bold);
+}
+
+.footer_text {
+  @extend %logoPosition;
+  padding: px-to-rem(10px);
+}
+
+@media screen and (min-width: 768px) {
+  .footer-wrap {
+    margin: 0 auto;
+    min-width: px-to-rem(768px);
+    padding: px-to-rem(80px) px-to-rem(20px) px-to-rem(34px);
+    @include flex ('aic');
+    justify-content: space-between;
+    div {
+      flex-basis: 20%;
+    }
+
+    p {
+      flex-basis: 28%;
+      text-align: start;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .footer-wrap {
+  padding: px-to-rem(130px) px-to-rem(40px) px-to-rem(70px);
+  font-size: px-to-rem(18px);  
+}
+}

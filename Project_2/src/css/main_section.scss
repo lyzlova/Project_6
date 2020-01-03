@@ -1,0 +1,194 @@
+.section {
+  position: relative;
+  padding: px-to-rem(20px);
+  text-align: center;
+
+  &_text {
+    padding-bottom: px-to-rem(20px);
+    font-weight: map-get($font-weight, regular);
+    font-size: px-to-rem(30px);
+  }
+}
+
+.section_card_wrap {
+  min-width: px-to-rem(280px);
+}
+
+.section_card {
+  border-radius: px-to-rem(6px);
+  margin-bottom: px-to-rem(20px);
+  background-color: $bcgFooter;
+  padding: px-to-rem(25px);
+
+  &_img {
+    border-radius: px-to-rem(4px);
+    width: 100%;
+  }
+
+  .section_card_heading {
+    color: $contentBackground;
+    padding: px-to-rem(25px) 0;
+    font-weight: map-get($font-weight, regular);
+    font-size: px-to-rem(24px);
+
+    &::after {
+      @include underline(inline, absolute, '', -1);
+      height: px-to-rem(16px);
+      bottom: px-to-rem(30px);
+    }
+  }
+
+  p {
+    font-weight: map-get($font-weight, regular);
+    font-size: px-to-rem(14px);
+    line-height: 1.5;
+    color: $colorSubtitle;
+  }
+}
+
+.banner {
+  min-width: px-to-rem(280px);
+  padding: px-to-rem(20px);
+  background: linear-gradient(to right, $colorBtnBunnerLeft, $colorBunnerRight);
+}
+
+.section_banner_heading {
+  padding-bottom: px-to-rem(25px);
+  font-weight: map-get($font-weight, regular);
+  font-size: px-to-rem(24px);
+  color: $colorText;
+}
+
+.section_banner_text {
+  font-weight: map-get($font-weight, regular);
+  font-size: px-to-rem(14px);
+  margin-bottom: px-to-rem(10px);
+  color: $colorSubtitle;
+}
+
+.section_banner_button {
+  @extend %btn;
+  align-self: center;
+  color: $colorBtn;
+  background-color: $colorBtnBunnerLeft;
+  padding: px-to-rem(10px) px-to-rem(30px);
+  font-size: px-to-rem(13px);
+  border: 1px solid $colorBtnBunnerLeft;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding: px-to-rem(20px) px-to-rem(20px) px-to-rem(180px);
+  }
+  .section_text {
+    padding-bottom: px-to-rem(40px);
+    font-size: px-to-rem(54px);
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    transform: translate(50% 50%);
+
+    &::after {
+      right: 0;
+      background-color: $colorUnderline;
+      @include underline(inline, absolute, '', -1);
+      width: px-to-rem(258px);
+      height: px-to-rem(16px);
+      bottom: px-to-rem(50px);
+    }
+  }
+
+  .section_card_wrap {
+    min-width: px-to-rem(728px);
+    @include flex ('jcsb');
+
+    .section_card_heading {
+      font-size: px-to-rem(34px);
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+
+      &::after {
+        @include underline(inline, absolute, '', -1);
+        left: 0;
+        width: 100%;
+        background-color: $colorUnderline;
+      }
+    }
+
+    p {
+      font-size: px-to-rem(22px);
+    }
+  }
+
+  .banner {
+     border-radius: px-to-rem(10px);
+    padding: px-to-rem(20px) px-to-rem(50px);
+    align-self: center;
+    position: absolute;
+    left: 13%;
+    width: 74%; 
+    top: 95.5%;
+  }
+
+  .section_banner {
+    width: 100%;
+    @include flex ('');
+    justify-content: space-between;
+
+
+    &_heading {
+      font-size: px-to-rem(26px);
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+
+      &::after {
+        @include underline(block, absolute, '', -1);
+        left: px-to-rem(101px);
+        width: px-to-rem(54px);
+        height: px-to-rem(13px);
+        bottom: px-to-rem(28px);
+        background-color: $colorUnderline;
+      }
+    }
+
+    &_text {
+      font-size: px-to-rem(18px);
+      text-align: start;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section_card_wrap {
+    flex-wrap: wrap;
+  }
+
+  .section_card {
+    flex-basis: 48%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    display: flex;
+    top: 93%;
+  }
+
+  .section_card {
+    flex-basis: 32%;
+  }
+
+  .section_banner {
+    &_text {
+      font-size: px-to-rem(20px);
+    }
+    &_button{
+      font-size: px-to-rem(18px);
+    }
+  }
+}
+
